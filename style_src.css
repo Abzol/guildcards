@@ -1,0 +1,192 @@
+
+	--bar-height:200px;
+}
+body{
+	background:#111;
+	color:#eee;
+	font-family:Verdana;
+}
+
+div {
+  transition-property: height;
+  transition-duration: 2s;
+  transition-timing-function: ease-out;
+} 
+
+.switches{
+	position:relative;
+	top:calc(var(--bar-height) + 2em + 25px );
+}
+input {
+	display:none;
+}
+label{
+	background-color:#222;
+	padding:2px 5px 2px 5px;
+	border-radius:10px;
+	user-select:none;
+	color:#888;
+}
+input:checked+label{
+	background-color:#444;
+	color:#eee;
+}
+/*%inputs%*/
+
+#weapon {
+	display:flex;
+	flex-direction:column;
+	justify-content:flex-end;
+	width:600px;
+	height:calc(var(--bar-height) + 25px);
+	/*%count-max%*/
+}
+#weapon-bars {
+	display:flex;
+	justify-content:space-around;
+	align-items:flex-end;
+}
+#weapon-icons {
+	display:flex;
+	justify-content:space-around;
+}
+#weapon-icons img{
+	width:25px;
+}
+#weapon-bars div{
+	width:15px;
+	display:block;
+}
+#weapon-bars div:after{
+	position:relative;
+	top:-1.5em;
+	justify-content:center;
+	display:flex;
+}
+
+#bar-gs {
+	background:linear-gradient(rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
+	height:calc(var(--count-gs) / var(--count-max) * var(--bar-height));
+}
+#bar-gs:after{
+	counter-reset: x var(--count-gs);
+	content:counter(x);
+}
+
+#bar-ls {
+	background:linear-gradient(rgba(97, 255, 186, 1), rgba(97, 255, 186, 0));
+	height:calc(var(--count-ls) / var(--count-max) * var(--bar-height));
+}
+#bar-ls:after{
+	counter-reset: x var(--count-ls);
+	content:counter(x);
+}
+
+#bar-sns {
+	background:linear-gradient(rgba(255, 20, 66, 1), rgba(255, 20, 66, 0));
+	height:calc(var(--count-sns) / var(--count-max) * var(--bar-height));
+}
+#bar-sns:after{
+	counter-reset: x var(--count-sns);
+	content:counter(x);
+}
+
+#bar-db {
+	background:linear-gradient(rgba(83, 161, 79, 1), rgba(83, 161, 79, 0));
+	height:calc(var(--count-db) / var(--count-max) * var(--bar-height));
+}
+#bar-db:after{
+	counter-reset: x var(--count-db);
+	content:counter(x);
+}
+
+#bar-hammer {
+	background:linear-gradient(rgba(29, 25, 105, 1), rgba(83, 161, 79, 0));
+	height:calc(var(--count-hammer) / var(--count-max) * var(--bar-height));
+}
+#bar-hammer:after{
+	counter-reset: x var(--count-hammer);
+	content:counter(x);
+}
+
+#bar-hh {
+	background:linear-gradient(rgba(235, 225, 171, 1), rgba(235, 225, 171, 0));
+	height:calc(var(--count-hh) / var(--count-max) * var(--bar-height));
+}
+#bar-hh:after{
+	counter-reset: x var(--count-hh);
+	content:counter(x);
+}
+
+#bar-lance {
+	background:linear-gradient(rgba(184, 255, 238, 1), rgba(184, 255, 238, 0));
+	height:calc(var(--count-lance) / var(--count-max) * var(--bar-height));
+}
+#bar-lance:after{
+	counter-reset: x var(--count-lance);
+	content:counter(x);
+}
+
+#bar-gl {
+	background:linear-gradient(rgba(255, 201, 253, 1), rgba(255, 201, 253, 0));
+	height:calc(var(--count-gl) / var(--count-max) * var(--bar-height));
+}
+#bar-gl:after{
+	counter-reset: x var(--count-gl);
+	content:counter(x);
+}
+
+#bar-sa {
+	background:linear-gradient(rgba(149, 188, 222, 1), rgba(149, 188, 222, 0));
+	height:calc(var(--count-sa) / var(--count-max) * var(--bar-height));
+}
+#bar-sa:after{
+	counter-reset: x var(--count-sa);
+	content:counter(x);
+}
+
+
+#bar-ca {
+	background:linear-gradient(rgba(212, 111, 17, 1), rgba(212, 111, 17, 0));
+	height:calc(var(--count-ca) / var(--count-max) * var(--bar-height));
+}
+#bar-ca:after{
+	counter-reset: x var(--count-ca);
+	content:counter(x);
+}
+
+#bar-ig {
+	background:linear-gradient(rgba(232, 185, 165, 1), rgba(232, 185, 165, 0));
+	height:calc(var(--count-ig) / var(--count-max) * var(--bar-height));
+}
+#bar-ig:after{
+	counter-reset: x var(--count-ig);
+	content:counter(x);
+}
+
+#bar-lbg {
+	background:linear-gradient(rgba(194, 232, 165, 1), rgba(194, 232, 165, 0));
+	height:calc(var(--count-lbg) / var(--count-max) * var(--bar-height));
+}
+#bar-lbg:after{
+	counter-reset: x var(--count-lbg);
+	content:counter(x);
+}
+
+#bar-hbg {
+	background:linear-gradient(rgba(119, 70, 148, 1), rgba(119, 70, 148, 0));
+	height:calc(var(--count-hbg) / var(--count-max) * var(--bar-height));
+}
+#bar-hbg:after{
+	counter-reset: x var(--count-hbg);
+	content:counter(x);
+}
+
+#bar-bow {
+	background:linear-gradient(rgba(29, 123, 181, 1), rgba(29, 123, 181, 0));
+	height:calc(var(--count-bow) / var(--count-max) * var(--bar-height));
+}
+#bar-bow:after{
+	counter-reset: x var(--count-bow);
+	content:counter(x);
+}

@@ -1,0 +1,64 @@
+[Monster Hunter 4 Ultimate]
+gs = 0
+ls = 0
+sns = 0
+db = 0
+hammer = 0
+hh = 0
+lance = 0
+gl = 0
+sa = 0
+ca = 0
+ig = 0
+lbg = 0
+hbg = 0
+bow = 0
+
+[Monster Hunter Generations Ultimate]
+gs = 248
+ls = 98
+sns = 0
+db = 5
+hammer = 0
+hh = 0
+lance = 5
+gl = 1
+sa = 32
+ca = 149
+ig = 2
+lbg = 0
+hbg = 0
+bow = 28
+cat = 62
+
+[Monster Hunter World]
+gs = 4
+ls = 263
+sns = 0
+db = 13
+hammer = 3
+hh = 0
+lance = 2
+gl = 0
+sa = 8
+ca = 18
+ig = 81
+lbg = 14
+hbg = 83
+bow = 178
+
+[Monster Hunter Rise]
+gs = 9
+ls = 4
+sns = 0
+db = 9
+hammer = 2
+hh = 4
+lance = 11
+gl = 1
+sa = 11
+ca = 0
+ig = 0
+lbg = 0
+hbg = 4
+bow = 1
