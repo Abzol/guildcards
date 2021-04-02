@@ -1,0 +1,31 @@
+body{
+	background:#111;
+	color:#eee;
+	font-family: Verdana;
+}
+#main{
+	width:100%;
+	max-width:650px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#name{
+	width:100%;
+	max-width:650px;
+	text-align: center;
+	font-weight: bold;
+}
+.row{
+	display:flex;
+	flex-direction:row;
+}
+.col{
+	display:flex;
+	flex-direction:column;
+}
+.small{
+	font-size:0.8em;
+}
+iframe {
+	border:none;
+}

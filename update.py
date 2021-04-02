@@ -1,21 +1,28 @@
 #!/usr/bin/python3
+import sys
 
 usage = {}
 WEAPONS = ['gs', 'ls', 'sns', 'db', 'hammer', 'hh', 'lance',
 		   'gl', 'sa', 'ca', 'ig', 'lbg', 'hbg', 'bow']
-with open('usage', 'r') as f:
-	game = ""
-	for line in f:
-		if line.startswith('['):
-			game = line[1:-2]
-			usage[game] = {}
-			print("Game name: " + line[1:-2])
-		else:
-			try:
-				weapon, ammount = line.split('=')
-				usage[game][weapon.strip()] = ammount.strip()
-			except ValueError:
-				pass
+try:
+	with open(sys.argv[1], 'r') as f:
+		game = ""
+		for line in f:
+			if line.startswith('['):
+				game = line[1:-2]
+				usage[game] = {}
+				for weapon in WEAPONS:
+					usage[game][weapon] = 0 #dummy value for older games
+				print("Game name: " + line[1:-2])
+			else:
+				try:
+					weapon, ammount = line.split('=')
+					usage[game][weapon.strip()] = ammount.strip()
+				except ValueError:
+					pass
+except FileNotFoundError:
+	print(f'no such file {sys.argv[1]} found')
+	sys.exit()
 
 with open('style_gen.css', 'w') as outfile:
 	outfile.write(':root {\n') #attach all counters to :root element for global access
@@ -43,7 +50,7 @@ with open('style_gen.css', 'w') as outfile:
 		countmaxstr += f'{weaponstring}\n' + ' '*21 #and attach to the max-count function
 		if weapon != 'bow': #the last weapon in the list is always bow
 			countmaxstr += ','
-	with open('style_raw.css', 'r') as infile:
+	with open('style_src.css', 'r') as infile:
 		text = infile.read()
 		for weapon in WEAPONS:
 			#--count-{weapon} isnt declared; it's a placeholder for this replacement to fill
@@ -57,8 +64,8 @@ with open('style_gen.css', 'w') as outfile:
 			switchstr += f'    --{tags[i]}-enabled: 0;\n}}' #double curlie is escaped } in f-string
 		text = text.replace('/*%inputs%*/', switchstr)
 		outfile.write(text)
-	with open('index.html', 'w') as html_out:
-		with open('index_src.html', 'r') as infile:
+	with open('card.html', 'w') as html_out:
+		with open('card_src.html', 'r') as infile:
 			text = infile.read()
 			#wire up the input toggles
 			switchstr = ''
